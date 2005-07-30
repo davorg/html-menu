@@ -3,4 +3,4 @@ a.html : A : /a.html :
 b.html : B : /b.html :
 ba.html : BA : /b/a.html : b.html
 bb.html : BB : /b/b.html : b.html
-baa.html : BAA : /b/a/b.html : ba.html
+baa.html : BAA : /b/a/a.html : ba.html
