@@ -17,7 +17,7 @@ sub new {
   my $class = shift;
 
   my $self = $class->SUPER::new(@_, 
-				id => 'name', 
+				id => 'name',
 				separator => '\s*:\s*');
 
   bless $self, $class;
@@ -62,10 +62,10 @@ sub menu {
 sub expand {
   my $self = shift;
 
-  my ($name, $curr) = @_;
-  my $pre = defined $_[2] ? $_[2] : '';
+  my ($name, $curr, $pre) = @_;
+  $pre = '' unless defined $pre;
 
-  return if $self->level($curr->{name}) > 1;
+  return '' if $self->level($curr->{name}) > 1;
 
   my $menu = '';
 
