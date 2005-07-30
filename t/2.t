@@ -5,7 +5,7 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 1;
+use Test::More tests => 2;
 
 use HTML::Menu;
 use Data::Dumper;
@@ -17,7 +17,13 @@ use Data::Dumper;
 
 my $m = HTML::Menu->new(file => 't/menu.dat');
 
-print $m->bread('ba.html');
-print $m->menu('ba.html');
+is($m->bread('ba.html'),
+'<span class="breadon"><a href="/b.html">B</a></span> &gt; <span class="breadoff">BA</span>');
 
-ok(1);
+is($m->menu('ba.html'),
+'<a class="menuoff" href="/a.html">A</a>
+<a class="menuon" href="/b.html">B</a>
+<p class="submenuon">BA</p>
+<a class="submenuoff" href="/b/b.html">BB</a>
+');
+
