@@ -18,7 +18,7 @@ sub new {
 
   my $self = $class->SUPER::new(@_, 
 				id => 'name',
-				separator => '\s*:\s*');
+				separator => '\s+:\s*');
 
   bless $self, $class;
 
